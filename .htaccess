@@ -1,0 +1,25 @@
+RewriteEngine On
+
+
+#index page
+RewriteRule ^index\.(php|html?)$ http://www.findacross.com/ [R=301,L]
+
+#subcategory page
+RewriteRule ^([^\s]+)\.html$ /subcategory.php?category=$1 [L]
+
+
+
+#result page
+#RewriteRule ^([^/]*)/([^/]*)\.html$ /listing.php?maincategory=$1&subcategory=$2 [L]
+
+RewriteRule ^([^-]+)/([^-]+)/$ /listing.php?maincategory=$1&subcategory=$2 [L,QSA]
+
+#profile page
+#RewriteRule ^([^/]*)\.$ /profile.php?bid=$1 [L]
+
+RewriteRule ^([^/]*)\.$ /profile.php?bid=$1 [L,QSA]
+
+#user
+RewriteRule ^j2iuser/([^/]*)\.html$ /user/t.php?user=$1 [L]
+
+#ErrorDocument 404 http://www.findacross.com/404.php

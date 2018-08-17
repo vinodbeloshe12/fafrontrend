@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: 
+Disallow: /
+
+Sitemap: http://www.findacross.com/sitemap.xml
