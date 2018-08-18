@@ -56,12 +56,12 @@
 						</strong>
 						<nav class="listar-addnav hidden-xs">
 							<ul>
-								<!-- <li>
+								<li>
 									<a id="listar-btnsignin" class="listar-btn listar-btnblue" href="#listar-loginsingup">
 										<i class="icon-smiling-face"></i>
 										<span>Login</span>
 									</a>
-								</li> -->
+								</li>
 								<li>
 									<a class="listar-btn listar-btngreen" href="http://www.findacross.com/addlisting.html">
 										<i class="icon-plus"></i>

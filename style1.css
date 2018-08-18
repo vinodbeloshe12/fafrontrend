@@ -181,7 +181,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		border: 1px solid #ececec;
-		text-transform: capitalize;
+		/* text-transform: capitalize; */
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		-o-text-overflow: ellipsis;

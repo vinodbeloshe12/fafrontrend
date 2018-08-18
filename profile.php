@@ -62,6 +62,9 @@ if(isset($_POST['btnemailsubmit'])) {
 								if($img["image"]){
 									echo '<figure class="listar-featuredimg" style="background-image:url(http://www.findacross.com/admin/uploads/'.$img["image"].');">	<figcaption>';
 									}
+									else{
+										echo '<figure class="listar-featuredimg" style="background-image:url(http://www.findacross.com/img/slider/slider'.rand(1,4).'.jpg);">	<figcaption>';
+									}
 							
 
 					?>

@@ -1,3 +1,15 @@
+<?php
+if(isset($_POST['btnloginsubmit'])) {
+	$user = mysqli_query($con,"SELECT * FROM `login` where username='$username' and password='$password'");
+	$userdata = $user->fetch_assoc();
+	if($userdata){
+		echo '<script>alert("Login Successful")</script>';
+		
+	}else{
+		echo '<script>alert("Invalid Login")</script>';
+	}
+}
+?>
 	<!--************************************
 				Footer Start
 		*************************************-->
@@ -125,30 +137,30 @@
 						</ul>
 						<div class="tab-content listar-tabcontentloginregistered">
 							<div role="tabpanel" class="tab-pane active fade in" id="listar-loging">
-								<form class="listar-formtheme listar-formlogin">
+								<form method="post" action="" class="listar-formtheme listar-formlogin">
 									<fieldset>
-										<div class="form-group listar-inputwithicon">
+										<div style="width: 100% !important;" class="form-group listar-inputwithicon">
 											<i class="icon-profile-male"></i>
-											<input type="text" name="username" class="form-control" placeholder="Username Or Email">
+											<input required type="text" name="username" class="form-control" placeholder="Username Or Email">
 										</div>
 										<div class="form-group listar-inputwithicon">
-											<i class="icon-icons208"></i>
-											<input type="password" name="password" class="form-control" placeholder="Password">
+											<i class="icon-lock6"></i>
+											<input required type="password" name="password" class="form-control" placeholder="Password">
 										</div>
 										<div class="form-group">
-											<div class="listar-checkbox">
+											<!-- <div class="listar-checkbox">
 												<input type="checkbox" name="remember" id="rememberpass2">
 												<label for="rememberpass2">Remember me</label>
-											</div>
+											</div> -->
 											<span>
 												<a href="#">Lost your Password?</a>
 											</span>
 										</div>
-										<button class="listar-btn listar-btngreen">Login</button>
+										<button type="submit" name="btnloginsubmit" class="listar-btn listar-btngreen">Login</button>
 									</fieldset>
 								</form>
 							</div>
-							<div role="tabpanel" class="tab-pane fade" id="listar-register">
+							<!-- <div role="tabpanel" class="tab-pane fade" id="listar-register">
 								<form class="listar-formtheme listar-formlogin">
 									<fieldset>
 										<div class="form-group listar-inputwithicon">
@@ -170,7 +182,7 @@
 										<button class="listar-btn listar-btngreen">login</button>
 									</fieldset>
 								</form>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					
