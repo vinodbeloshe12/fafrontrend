@@ -2941,8 +2941,8 @@ Share Icons Style
 	}
 
 	.listar-shareicons {
-		width: 85px;
-		left: 30%;
+		width: 40px;
+		left: 50%;
 		opacity: 0;
 		z-index: 2;
 		bottom: 100%;
@@ -2994,7 +2994,7 @@ Share Icons Style
 	.listar-showicon .listar-shareicons {
 		opacity: 1;
 		visibility: visible;
-		margin-bottom: 45px;
+		margin-bottom: 20px;
 	}
 
 	/* =============================================
@@ -4404,7 +4404,7 @@ Coming Soon Style
 	.listar-404error {
 		width: 100%;
 		float: left;
-		padding: 250px 0;
+		padding: 270px 0;
 		text-align: center;
 		background: url(images/icons/icon-08.png) no-repeat 50% 90%;
 	}

@@ -1,7 +1,5 @@
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
-RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
 
 #index page
 RewriteRule ^index\.(php|html?)$ http://www.findacross.com/ [R=301,L]
@@ -24,4 +22,4 @@ RewriteRule ^([^/]*)\.$ /profile.php?bid=$1 [L,QSA]
 #user
 RewriteRule ^j2iuser/([^/]*)\.html$ /user/t.php?user=$1 [L]
 
-ErrorDocument 404 http://www.findacross.com/404.php
+#ErrorDocument 404 http://www.findacross.com/404.php

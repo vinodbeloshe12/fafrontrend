@@ -3,11 +3,6 @@ include("db.php");
 $bid = $_GET['bid'];
 $data = mysqli_query($con,"SELECT * FROM `fa_listing` where bid='$bid'");
 $row = $data->fetch_assoc();
-function getAddress() {
-    $protocol = $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
-    return $protocol.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-}
-$page_link = getAddress();
 $_tpl = array();
 $_tpl['title'] = ''.$row['buisnessname'].','.$row['services'].' in '.$row['addline2'].', '.$row['city'].'';
 $_tpl['meta_desc'] = 'Findacross,'.$row['buisnessname'].','.$row['services'].' in '.$row['addline2'].', '.$row['city'].'';
@@ -39,17 +34,6 @@ if(isset($_POST['btnemailsubmit'])) {
 		mysqli_query($con,"INSERT INTO `fa_rating` (`bid`, `name`, `email`, `rating`, `review`) VALUES('$bid','$name','$email_address','$rating','$review')");
 	}
 ?>
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
 
 <main id="listar-main" class="listar-main listar-haslayout">
 			<div id="listar-twocolumns" class="listar-twocolumns">
@@ -101,13 +85,9 @@ if(isset($_POST['btnemailsubmit'])) {
 														</a>
 														<div class="listar-btnquickinfo">
 															<div class="listar-shareicons">
-																<!-- <a href="javascript:void(0);"><i class="fa fa-twitter"></i></a> -->
-
-																<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-																
-																<!-- <a href="javascript:void(0);"><i class="fa fa-facebook"></i></a> -->
-																<?php echo'<div class="fb-share-button" data-href="'.$page_link.'" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.findacross.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>';?>
-																<!-- <a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a> -->
+																<a href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
+																<a href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
+																<a href="javascript:void(0);"><i class="fa fa-pinterest-p"></i></a>
 															</div>
 														</div>
 													</div>
@@ -121,8 +101,8 @@ if(isset($_POST['btnemailsubmit'])) {
 														<span>+ <?php echo $row['contact']; ?></span>
 													</li>
 													<li>
-														<a href="mailto:<?php echo $row['email']; ?>"><i class="icon-email"></i>
-														<span> <?php echo $row['email']; ?></span></a>
+														<i class="icon-email"></i>
+														<span> <?php echo $row['email']; ?></span>
 													</li>
 													<li>
 														<i class="icon-icons74"></i>
@@ -138,7 +118,7 @@ if(isset($_POST['btnemailsubmit'])) {
 														if($row['website']){
 															echo '<span><a target="_blank" href="'.$row['website'].'">'.$row['website'].'</a></span>';
 														}else{
-															echo '<span><a target="_blank" href="http://www.findacross.com/'.$row['bid'].'.">www.findacross.com/'.$row['bid'].'</a></span>';
+															echo '<span><a href="www.findacross.com/'.$row['bid'].'">www.findacross.com/'.$row['bid'].'</a></span>';
 														}
 														?>
 													</li>
@@ -337,7 +317,7 @@ while($obj = $reviews->fetch_object()){
 	echo '<li>
 	<div class="listar-comment">
 		<div class="listar-commentcontent">
-		<p> Be first one to Review Us</p>
+		<h6> Be first one to Review Us</h6>
 		</div>
 		</div>
 		</li>';
@@ -361,12 +341,12 @@ while($obj = $reviews->fetch_object()){
 													<form method="post" action="" class="listar-formtheme listar-formaddreview">
 														<fieldset>
 															<div class="row">
-																<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 																	<div class="listar-rating">
 																		<p>Your rating for this listing</p>
-																		 <span class="listar-stars"></span>
+																		<span class="listar-stars"></span>
 																	</div>
-																</div> -->
+																</div>
 															
 																<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 																	<div class="form-group">
